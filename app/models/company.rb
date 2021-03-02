@@ -18,5 +18,7 @@ class Company < ApplicationRecord
     validates :foundation_date
   end
 
- 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefectures
+  belongs_to :business_content
 end

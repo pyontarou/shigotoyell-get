@@ -26,4 +26,6 @@ class User < ApplicationRecord
     end
   end
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefectures
 end
