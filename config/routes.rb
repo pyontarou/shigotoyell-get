@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root to: "jobs#index"
   resources :users, only: [:show]
   resources :companies, only: [:show]
+  resources :jobs, only: [:new]
 
 end
 

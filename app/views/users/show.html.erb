@@ -1,0 +1,101 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("logo.png", class:"logo-icon"), "/" %>
+    
+  </div>
+  <div class='nav'>  
+    <ul class='lists-users'>
+       <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, user_session, class: "user-nickname" %></li> 
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
+  
+
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+  <ul>
+     <li class='service-title'> <%=image_tag"flag.png" , class:"job-logo-icon"%>
+      求人応募リスト
+    </li>
+    <li class='service-explain'>
+     応募はありません
+    </li>
+    <%# <p class='service-explain'>
+      フリマアプリです
+    </p> %>
+     <ul class='service-title'>
+     <%=image_tag"star.png" , class:"like-logo-icon"%>
+      お気に入りリスト
+    </ul>
+    <ul class='service-explain'>
+     お気に入りはありません
+    </ul>
+    <%# <p class='service-explain'>
+      フリマアプリです
+    </p> %>
+  </div>
+  
+  <div class="applicant-edit">
+  <%=link_to('#', class: 'applicant-btn-edit') do %>
+   <span class='applicant-btn-edit-text'>登録内容の編集</span>
+  <%#image_tag 'icon_camera.png' , size: '200x100' ,class: "applicant-btn-icon" %>
+<% end %>
+</div>
+  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+
+  <%# /画面中央の「会員数日本一位」帯部分 %>
+
+  <%# FURIMAの特徴 %>
+  <div class='feature-contents'>
+    <h2 class='title'>
+      SHIGOTOエールの特徴
+    </h2>
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "mushimegane.png", class:"list-pictu" %>
+        <h3 class='feature-list-text'>
+          簡単に仕事を探せる
+        </h3>
+        <p class='feature-list-description'>
+          スマホひとつで、いつでもどこでも簡単に検索・応募が可能！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "communication-1809935_1280.png", class:"list-pic" %>
+        <h3 class='feature-list-text'>
+          事業主に質問できる
+        </h3>
+        <p class='feature-list-description'>
+          気になるお仕事をもっと詳しく知りたい！
+          <br>お仕事詳細ページよりメッセージ送信可能
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "flat-2126879_1280.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          簡単応募受付
+        </h3>
+        <p class='feature-list-description'>
+          仕事詳細の応募をクリックで応募完了！
+          <br>あとは履歴書、職務経歴書を送ればO.K
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# /FURIMAの特徴 %>
+
+  <%# /商品一覧 %>
+</div>
+<%#link_to('#', class: 'purchase-btn') do %>
+  <%# <span class='purchase-btn-text'>出品する</span> %>
+  <%# image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<%#end %>
+<%= render "shared/footer" %>
