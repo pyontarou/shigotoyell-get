@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Companies::SessionsController < Devise::SessionsController
-  def after_sign_up_path_for(resource)
-    company_path(current_company.id)
-  end
+  # def after_sign_up_path_for(resource)
+  #   root_path
+  # end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
