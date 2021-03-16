@@ -4,5 +4,4 @@ class JobsController < ApplicationController
     @company = Company.new
     @user = User.new
   end
-
 end
